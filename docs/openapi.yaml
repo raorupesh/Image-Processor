@@ -1,0 +1,77 @@
+openapi: 3.1.0
+info:
+  title: Image Processor API
+  version: 1.0.0
+  description: API for uploading an image and applying ordered transformations.
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+  /api/transform:
+    post:
+      summary: Transform an uploaded image
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - image
+                - operations
+              properties:
+                image:
+                  type: string
+                  format: binary
+                  description: Source image file.
+                operations:
+                  type: string
+                  description: JSON array of operations in execution order.
+                  example: '[{"type":"flip","direction":"horizontal"},{"type":"rotate","direction":"left"}]'
+      responses:
+        '200':
+          description: Transformed image returned as a PNG download.
+          headers:
+            Content-Disposition:
+              schema:
+                type: string
+            Content-Type:
+              schema:
+                type: string
+              example: image/png
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Invalid request payload
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+        '415':
+          description: Unsupported media type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
