@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#09111f"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <radialGradient id="glowBlue" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 0) scale(620)">
+      <stop offset="0" stop-color="#4c7cff" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#4c7cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowCyan" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1280 0) scale(460)">
+      <stop offset="0" stop-color="#00b8d9" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#00b8d9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBottom" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 660) scale(300)">
+      <stop offset="0" stop-color="#54adff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#54adff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5fa8ff"/>
+      <stop offset="1" stop-color="#7c5cff"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7fc8ff"/>
+      <stop offset="1" stop-color="#7c5cff"/>
+    </linearGradient>
+    <linearGradient id="skyGray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b8b8b8"/>
+      <stop offset="1" stop-color="#787878"/>
+    </linearGradient>
+    <clipPath id="tileIn"><rect x="96" y="395" width="220" height="165" rx="18"/></clipPath>
+    <clipPath id="tileOut"><rect x="964" y="395" width="220" height="165" rx="18"/></clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <rect width="1280" height="640" fill="url(#glowBlue)"/>
+  <rect width="1280" height="640" fill="url(#glowCyan)"/>
+  <rect width="1280" height="640" fill="url(#glowBottom)"/>
+
+  <!-- Heading -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <text x="96" y="140" font-size="18" font-weight="600" letter-spacing="3" fill="#7fc8ff">NODE.JS · EXPRESS · REACT · TYPESCRIPT · SHARP</text>
+    <text x="93" y="232" font-size="88" font-weight="700" fill="#eef4ff">Image Processor</text>
+    <text x="96" y="292" font-size="30" fill="#b7c5e2">Upload an image, build a pipeline of transformations, download a PNG.</text>
+  </g>
+
+  <!-- Input image -->
+  <g clip-path="url(#tileIn)">
+    <rect x="96" y="395" width="220" height="165" fill="url(#sky)"/>
+    <circle cx="156" cy="445" r="22" fill="#ffd27f"/>
+    <polygon points="96,560 96,510 170,452 236,505 280,474 316,500 316,560" fill="#8ce0ba"/>
+    <polygon points="96,560 96,530 150,500 220,540 270,512 316,535 316,560" fill="#1f7a5c"/>
+  </g>
+  <rect x="96" y="395" width="220" height="165" rx="18" fill="none" stroke="#b7c5e2" stroke-opacity="0.45" stroke-width="2"/>
+
+  <!-- Output image: flipped horizontally and grayscale -->
+  <g clip-path="url(#tileOut)">
+    <g transform="translate(1280 0) scale(-1 1)">
+      <rect x="96" y="395" width="220" height="165" fill="url(#skyGray)"/>
+      <circle cx="156" cy="445" r="22" fill="#d6d6d6"/>
+      <polygon points="96,560 96,510 170,452 236,505 280,474 316,500 316,560" fill="#c2c2c2"/>
+      <polygon points="96,560 96,530 150,500 220,540 270,512 316,535 316,560" fill="#5b5b5b"/>
+    </g>
+  </g>
+  <rect x="964" y="395" width="220" height="165" rx="18" fill="none" stroke="url(#accent)" stroke-width="3"/>
+
+  <!-- Tile captions -->
+  <g font-family="Consolas, Menlo, monospace" font-size="20" fill="#a8bbdb">
+    <text x="206" y="596" text-anchor="middle">input.jpg</text>
+    <text x="1074" y="596" text-anchor="middle">output.png</text>
+  </g>
+
+  <!-- Connectors -->
+  <g stroke="#7fc8ff" stroke-width="3" stroke-linecap="round">
+    <line x1="322" y1="477" x2="346" y2="477"/>
+    <line x1="606" y1="477" x2="618" y2="477"/>
+    <line x1="878" y1="477" x2="950" y2="477"/>
+  </g>
+  <g fill="#7fc8ff">
+    <polygon points="354,477 343,470 343,484"/>
+    <polygon points="626,477 615,470 615,484"/>
+    <polygon points="958,477 947,470 947,484"/>
+  </g>
+
+  <!-- Pipeline steps -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <rect x="360" y="445" width="240" height="64" rx="16" fill="#ffffff" fill-opacity="0.06" stroke="#b7c5e2" stroke-opacity="0.35" stroke-width="1.5"/>
+    <circle cx="392" cy="477" r="16" fill="url(#accent)"/>
+    <text x="392" y="484" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+    <text x="420" y="485" font-size="22" font-weight="600" fill="#e5eefc">Flip horizontal</text>
+
+    <rect x="632" y="445" width="240" height="64" rx="16" fill="#ffffff" fill-opacity="0.06" stroke="#b7c5e2" stroke-opacity="0.35" stroke-width="1.5"/>
+    <circle cx="664" cy="477" r="16" fill="url(#accent)"/>
+    <text x="664" y="484" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+    <text x="692" y="485" font-size="22" font-weight="600" fill="#e5eefc">Grayscale</text>
+  </g>
+</svg>

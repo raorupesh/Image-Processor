@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="images/image-processor-brand/image-processor-social-preview.jpg" alt="Image Processor: upload an image, build a pipeline of transformations, download a PNG" width="820">
+</p>
+
 # Image Processing Project
 
 A web-based image processor built with Node.js, Express, React, and TypeScript.
@@ -53,3 +57,7 @@ The primary endpoint is `POST /api/transform` and expects `multipart/form-data` 
 
 - `image`: file upload
 - `operations`: JSON string describing the ordered pipeline
+
+## License
+
+[MIT](LICENSE) © 2026 Rupeshwar Rao
